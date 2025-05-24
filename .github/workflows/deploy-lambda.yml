@@ -16,7 +16,28 @@ permissions:
   contents: read
 
 jobs:
-  lambda:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install requirements (if any)
+        run: |
+          if [ -f src/back/requirements.txt ]; then
+            pip install -r src/back/requirements.txt
+          fi
+
+      - name: Compile Lambda source
+        run: python -m py_compile src/back/lambda_function.py
+
+  deploy:
+    needs: build            
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,10 +50,7 @@ jobs:
           role-session-name: GitHub_to_AWS_via_OIDC
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: STS who-am-I
-        run: aws sts get-caller-identity
-
-      - name: Install Terraform         
+      - name: Install Terraform
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.7.5
