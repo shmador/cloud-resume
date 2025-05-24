@@ -1,0 +1,42 @@
+name: Deploy Lambda (Terraform)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/back/**"
+      - "environments/lambda.tf"
+  workflow_dispatch:
+
+env:
+  AWS_REGION: il-central-1
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  lambda:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::423408880404:role/GitHubAction-AssumeRoleWithAction
+          role-session-name: GitHub_to_AWS_via_OIDC
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: STS who-am-I
+        run: aws sts get-caller-identity
+
+      - name: Terraform apply (lambda only)
+        working-directory: environments
+        run: |
+          terraform init
+          terraform apply \
+            -target=aws_lambda_function.lambda \
+            -auto-approve
+
