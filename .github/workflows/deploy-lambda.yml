@@ -32,6 +32,11 @@ jobs:
       - name: STS who-am-I
         run: aws sts get-caller-identity
 
+      - name: Install Terraform         
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.7.5
+
       - name: Terraform apply (lambda only)
         working-directory: environments
         run: |
