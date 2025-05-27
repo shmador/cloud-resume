@@ -42,5 +42,7 @@ jobs:
         run: |
           terraform init
           terraform apply \
-            -target=aws_s3_bucket_object.website \
+            -target=aws_s3_object.index \
+            -target=aws_s3_object.error \
+            -target=aws_s3_object.visitors \
             -auto-approve
