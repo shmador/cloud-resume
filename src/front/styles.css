@@ -1,0 +1,64 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #000;
+  background: #fff;
+  line-height: 1.5;
+}
+
+.wrapper {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 0.5rem;
+}
+
+.section {
+  margin-top: 1.5rem;
+}
+
+.section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #000;
+  padding-bottom: 0.25rem;
+}
+
+.skill-list,
+.project ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.skill-list li,
+.project ul li {
+  margin-bottom: 0.5rem;
+}
+
+.project .project-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
