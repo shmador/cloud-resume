@@ -54,6 +54,16 @@ resource "aws_s3_object" "visitor_js" {
   etag         = filemd5("../src/front/visitors.js") 
 }
 
+resource "aws_s3_object" "index" {
+  bucket = aws_s3_bucket.site.id
+  key    = "styles.css"
+  source = "../src/front/styles.css"
+  content_type = "text/css"
+  etag = filemd5("../src/front/styles.css")
+}
+
+
+
 resource "aws_s3_bucket_policy" "policy" {
   bucket = aws_s3_bucket.site.id
 
