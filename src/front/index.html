@@ -11,7 +11,7 @@
 				<h1>Dor Atar</h1>
 				<div class="contact">
 					<span>Tel: +972-555-555-555 · </span>
-					<a href="dorattar4@gmail.com">example@example.com</a> · 
+					<span>dorattar4@gmail.com · </span>
 					<a href="https://github.com/shmador">github.com/shmador</a> · 
 				</div>
 			</header>
@@ -20,20 +20,18 @@
 				<h2>Professional Summary</h2>
 				<p>Entry-level DevOps enthusiast skilled in automating infrastructure, CI/CD pipelines, and cloud services. Adept at rapidly learning new technologies and applying best practices to deliver reliable, scalable systems.</p>
 			</section>
-			<section class="section">
-				<h2>Technical Skills</h2>
-				<ul class="skill-list">
-					<li><strong>Cloud Computing:</strong> AWS (EC2, Route53, VPC, S3, Lambda, API Gateway, CloudFront, Route 53, DynamoDB, IAM, ECS)</li>
-					<li><strong>CI/CD:</strong> GitLab, Jenkins, GitHub Actions</li>
-					<li><strong>Observability &amp; Monitoring:</strong> Grafana, Prometheus </li>
-					<li><strong>Containerization &amp; Orchestration:</strong> Docker, Kubernetes</li>
-					<li><strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
-				</ul>
-			</section>
-
-
+			
 			<section class="section">
 				<h2>Projects</h2>
+				<div class="project">
+					<p class="project-title"><strong>Go Kubernetes Tuner Service</strong></p>
+					<ul>
+						<li>Built a Go-based service that polls the Prometheus API for real-time CPU usage metrics.</li>
+						<li>Automatically scales pods via Argo CD when CPU thresholds are exceeded.</li>
+						<li>Automates commits to Git for updated Helm values, triggering GitOps-driven redeployments.</li>
+						<li>Configured a CI/CD pipeline to run unit tests on the Go code and validate Helm charts before merge.</li>
+					</ul>
+				</div>
 				<div class="project">
 					<p class="project-title"><strong>Cloud‑Hosted Resume Website</strong></p>
 					<ul>
@@ -51,6 +49,16 @@
 					</ul>
 				</div>
 			</section>
+			
+			<section class="section">
+				<h2>Technical Skills</h2>
+				<ul class="skill-list">
+					<li><strong>Cloud Computing:</strong> AWS (EC2, Route53, VPC, S3, Lambda, API Gateway, CloudFront, Route 53, DynamoDB, IAM, EKS)</li>
+					<li><strong>CI/CD:</strong> GitLab, Jenkins, GitHub Actions</li>
+					<li><strong>Observability &amp; Monitoring:</strong> Grafana, Prometheus </li>
+					<li><strong>Containerization &amp; Orchestration:</strong> Docker, Kubernetes</li>
+					<li><strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
+				</ul>
 			</section>
 
 			<section class="section">
