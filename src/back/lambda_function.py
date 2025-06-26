@@ -1,15 +1,15 @@
 import boto3, json, traceback
 dynamo = boto3.client("dynamodb")
 
-def respond(err=None, res=None, code_if_err="400"):
+def respond(err=None, res=None):
     if err:
         # Prefer ClientError's message if present, else str(err)
         msg = getattr(err, "response", {}).get("Error", {}).get("Message", str(err))
         body = {"error": msg}
-        status = code_if_err
+        status = 400
     else:
         body = res
-        status = "200"
+        status = 200
 
     return {
         "statusCode": status,
