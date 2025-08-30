@@ -43,6 +43,6 @@ jobs:
           terraform init
           terraform apply \
             -target=aws_s3_object.index \
-            -target=aws_s3_object.error \
-            -target=aws_s3_object.visitors \
+            -target=aws_s3_object.css \
+            -target=aws_s3_object.visitor_js \
             -auto-approve
