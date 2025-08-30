@@ -1,77 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Dor Resume</title>
-	</head>
-	<body>
-		<div class="wrapper">
-			<header>
-				<h1>Dor Atar</h1>
-				<div class="contact">
-					<span>Tel: +972-555-555-555 · </span>
-					<span>dorattar4@gmail.com · </span>
-					<a href="https://github.com/shmador">github.com/shmador</a> · 
-				</div>
-			</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dor Atar – DevOps Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>Dor Atar</h1>
+        <p class="role">DevOps Engineer</p>
+      </div>
+      <div class="contacts">
+        <div>✉️ <a href="mailto:dorattar4@gmail.com">dorattar4@gmail.com</a></div>
+        <div>🌐 <a href="https://doratar.com/" target="_blank" rel="noopener">doratar.com</a></div>
+        <div>🔗 <a href="https://www.linkedin.com/in/dor-atar-017b47255/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div>💻 <a href="https://github.com/shmador" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+    </header>
 
-			<section class="section">
-				<h2>Professional Summary</h2>
-				<p>Entry-level DevOps enthusiast skilled in automating infrastructure, CI/CD pipelines, and cloud services. Adept at rapidly learning new technologies and applying best practices to deliver reliable, scalable systems.</p>
-			</section>
-			
-			<section class="section">
-			  <h2>Projects</h2>
-			  <div class="project">
-			    <p class="project-title"><strong>Go Kubernetes Tuner Service</strong></p>
-			    <ul>
-			      <li>Built a <strong>Go</strong>-based service that polls the <strong>Prometheus</strong> API for real-time CPU usage metrics.</li>
-			      <li>Automatically scales pods via <strong>ArgoCD</strong> when CPU thresholds are exceeded.</li>
-			      <li>Automates commits to <strong>Git</strong> for updated <strong>Helm</strong> values, triggering <strong>GitOps</strong>-driven redeployments.</li>
-			      <li>Configured a CI/CD pipeline in <strong>GitHub Actions</strong> to run unit testson the Go code and validate Helm charts before merge.</li>
-			    </ul>
-			  </div>
-			  <div class="project">
-			    <p class="project-title"><strong>Cloud-Hosted Resume Website</strong></p>
-			    <ul>
-			      <li>Deployed a static website to <strong>AWS S3</strong> fronted by <strong>CloudFront</strong> with <strong>Route53</strong> DNS.</li>
-			      <li>Integrated <strong>Lambda</strong>, <strong>API Gateway</strong>, and <strong>DynamoDB</strong> to track visitor analytics<.</li>
-			      <li>Defined infrastructure as code with <strong>Terraform</strong> and automated deployment via <strong>GitHub Actions</strong>.</li>
-			    </ul>
-			  </div>
-			  <div class="project">
-			    <p class="project-title"><strong>Workout Logger – Java Spring &amp; MySQL</strong></p>
-			    <ul>
-			      <li>Developed a full-stack workout tracker using <strong>Java Spring Boot</strong> REST API backed by <strong>MySQL</strong>.</li>
-			      <li><strong>Dockerized</strong> services with Compose—including custom backend, MySQL, and <strong>Nginx</strong> reverse-proxy images—for one-command local deployment.</li>
-			      <li>Implemented CRUD endpoints, data filtering, and database schema initialization via SQL migration script.</li>
-			    </ul>
-			  </div>
-			</section>
-			
-			<section class="section">
-				<h2>Technical Skills</h2>
-				<ul class="skill-list">
-					<li><strong>Cloud Computing:</strong> AWS (EC2, Route53, VPC, Lambda, API Gateway, CloudFront, DynamoDB, IAM, EKS, RDS)</li>
-					<li><strong>CI/CD:</strong> GitLab, Jenkins, GitHub Actions, ArgoCD</li>
-					<li><strong>Observability &amp; Monitoring:</strong> Grafana, Prometheus, ELK Stack</li>
-					<li><strong>Containerization &amp; Orchestration:</strong> Docker, Kubernetes, Helm</li>
-					<li><strong>Infrastructure as Code:</strong> Terraform, Ansible</li>
-				</ul>
-			</section>
+    <section>
+      <h2>Projects</h2>
 
-			<section class="section">
-				<h2>Education</h2>
-				<p><strong>Bynet Software Technician Track – DevOps Focus</strong>, 2025 (in progress)</p>
-				<p>Coursework includes Cloud Architecture, Infrastructure as Code, Linux Administration, Networking.</p>
-				<p><strong>Open University - Computer Science</strong>, 2025 (in progres)</p>
-			</section>
+      <article>
+        <h3>Air-Gapped Kubernetes Solution</h3>
+        <p class="subtle">DevOps bootcamp final project</p>
+        <ul>
+          <li>Designed architecture for a no-internet EKS cluster using <strong>eksctl</strong> and <strong>AWS CDK</strong> resulting in enhanced cluster security and low latency access.</li>
+          <li>Automated cluster management using <strong>Karpenter</strong> for autoscaling and <strong>CloudWatch Container Insights</strong> for observability, providing a production-ready Kubernetes environment.</li>
+          <li>Implemented a GitOps solution using <strong>GitLab Repository Mirroring</strong> to a local separate VPC repository, bootstrapped cluster with <strong>ArgoCD</strong> ensuring continuous and secure deployment.</li>
+        </ul>
+      </article>
 
-		</div>
+      <article>
+        <h3>Monorepo CI/CD Workflow</h3>
+        <ul>
+          <li>Automated semantic-versioning process for each microservice utilizing <strong>Conventional Commits</strong> in <strong>GitLab CI</strong> allowing for smooth integration across multiple systems.</li>
+          <li>Imported each service to Docker images with <strong>Buildah</strong> for image building providing a secure integration pipeline.</li>
+          <li>Packaged microservice installations with <strong>Helm</strong> improving deployment workflow customizability.</li>
+        </ul>
+      </article>
 
-		<script src="visitors.js"></script>
-		<link rel="stylesheet" href="styles.css" type="text/css">
-	</body>
+      <article>
+        <h3>Personal Resume Website <a href="https://doratar.com/" target="_blank" rel="noopener">doratar.com</a></h3>
+        <ul>
+          <li>Designed architecture for a static website using <strong>AWS CloudFront</strong> and <strong>S3</strong> as origin in conjunction with <strong>Route53</strong> – resulting in a cost-effective low latency solution.</li>
+          <li>Designed a backend system using <strong>AWS Lambda</strong> integrated with <strong>API Gateway</strong> to process visitor analytics into <strong>DynamoDB</strong> resulting in a cost-effective serverless solution.</li>
+          <li>Automated deployment using <strong>Terraform</strong> with <strong>GitHub Actions</strong> for a durable architecture.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <p><strong>Software Technician</strong><br/>
+         Technological College Beersheba — 2025
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <div><strong>Programming Languages</strong></div>
+          <div class="chip-list">
+            <span class="chip">Python</span>
+            <span class="chip">Bash</span>
+            <span class="chip">Go Lang</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>Cloud Platforms</strong></div>
+          <div class="chip-list">
+            <span class="chip">AWS</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>Containerization</strong></div>
+          <div class="chip-list">
+            <span class="chip">Docker</span>
+            <span class="chip">Kubernetes</span>
+            <span class="chip">Helm</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>Configuration Management</strong></div>
+          <div class="chip-list">
+            <span class="chip">Ansible</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>CI/CD Tools</strong></div>
+          <div class="chip-list">
+            <span class="chip">Jenkins</span>
+            <span class="chip">GitLab CI</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">ArgoCD</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>Monitoring and Logging</strong></div>
+          <div class="chip-list">
+            <span class="chip">Prometheus</span>
+            <span class="chip">Grafana</span>
+            <span class="chip">ELK Stack</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>Infrastructure as Code (IaC)</strong></div>
+          <div class="chip-list">
+            <span class="chip">Terraform</span>
+            <span class="chip">CloudFormation</span>
+            <span class="chip">CDK</span>
+          </div>
+        </div>
+        <div>
+          <div><strong>Security</strong></div>
+          <div class="chip-list">
+            <span class="chip">Security best practices</span>
+            <span class="chip">Vulnerability scanning</span>
+            <span class="chip">Risk mitigation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Awards &amp; Certifications</h2>
+      <ul>
+        <li>
+          AWS Solutions Architect Associate — 
+          <a href="https://www.credly.com/badges/2d8029e2-e698-48ea-a6ba-519317ebc36f/linked_in?t=t1lpak" target="_blank" rel="noopener">Credly</a>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <script src="visitors.js"></script>
+</body>
 </html>
-<!-- Testing GH Actions CI -->
+
+
